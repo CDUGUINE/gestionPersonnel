@@ -8,11 +8,11 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 
-namespace gestionPersonnel
+namespace gestionPersonnel.view
 {
-    public partial class frmConnexion : Form
+    public partial class frmAbsenceNouvMod : Form
     {
-        public frmConnexion()
+        public frmAbsenceNouvMod()
         {
             InitializeComponent();
         }
