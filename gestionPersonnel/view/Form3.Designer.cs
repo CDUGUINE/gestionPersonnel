@@ -55,7 +55,7 @@ namespace gestionPersonnel.view
             // 
             // btnSupprimer
             // 
-            this.btnSupprimer.Location = new System.Drawing.Point(95, 315);
+            this.btnSupprimer.Location = new System.Drawing.Point(95, 316);
             this.btnSupprimer.Name = "btnSupprimer";
             this.btnSupprimer.Size = new System.Drawing.Size(75, 23);
             this.btnSupprimer.TabIndex = 2;
