@@ -1,7 +1,5 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Threading.Tasks;
+﻿using gestionPersonnel.view;
+using System;
 using System.Windows.Forms;
 
 namespace gestionPersonnel
@@ -16,7 +14,7 @@ namespace gestionPersonnel
         {
             Application.EnableVisualStyles();
             Application.SetCompatibleTextRenderingDefault(false);
-            Application.Run(new frmConnexion());
+            Application.Run(new FrmAuthentification());
         }
     }
 }

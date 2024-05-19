@@ -1,7 +1,7 @@
 ﻿namespace gestionPersonnel.model
 {
     /// <summary>
-    /// Classe métier liée à la table Developpeur
+    /// Classe métier liée à la table Personnel
     /// </summary>
     public class Personnel
     {
