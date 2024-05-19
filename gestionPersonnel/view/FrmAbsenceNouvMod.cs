@@ -10,8 +10,14 @@ using System.Windows.Forms;
 
 namespace gestionPersonnel.view
 {
+    /// <summary>
+    /// fenêtre permettant d'ajouter ou de de modifier une absence
+    /// </summary>
     public partial class frmAbsenceNouvMod : Form
     {
+        /// <summary>
+        /// initialisation de la fenêtre
+        /// </summary>
         public frmAbsenceNouvMod()
         {
             InitializeComponent();

@@ -8,11 +8,17 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 
-namespace gestionPersonnel.view
+namespace gestionPersonnel
 {
-    public partial class frmEditionPersonnel : Form
+    /// <summary>
+    /// fenêtre permettant de se connecter à l'application
+    /// </summary>
+    public partial class frmConnexion : Form
     {
-        public frmEditionPersonnel()
+        /// <summary>
+        /// initialisation de la fenêtre
+        /// </summary>
+        public frmConnexion()
         {
             InitializeComponent();
         }

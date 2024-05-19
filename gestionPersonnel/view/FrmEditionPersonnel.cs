@@ -10,9 +10,15 @@ using System.Windows.Forms;
 
 namespace gestionPersonnel.view
 {
-    public partial class frmGestionPersonnel : Form
+    /// <summary>
+    /// fenêtre permettant de renseigner ou modifier les informations d'un personnel
+    /// </summary>
+    public partial class frmEditionPersonnel : Form
     {
-        public frmGestionPersonnel()
+        /// <summary>
+        /// initialisation de la fenêtre
+        /// </summary>
+        public frmEditionPersonnel()
         {
             InitializeComponent();
         }

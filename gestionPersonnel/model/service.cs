@@ -1,14 +1,17 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
-
-namespace gestionPersonnel.model
+﻿namespace gestionPersonnel.model
 {
+    /// <summary>
+    /// Service dans lequel le personnel est affecté
+    /// </summary>
     public class Service
     {
+        /// <summary>
+        /// nombre entier permettant d'identifier le service (clé primaire de la table service)
+        /// </summary>
         public int Idservice { get; }
+        /// <summary>
+        /// nom du service
+        /// </summary>
         public string Nom { get; }
 
         /// <summary>

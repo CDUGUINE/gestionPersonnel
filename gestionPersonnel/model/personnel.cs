@@ -1,10 +1,4 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
-
-namespace gestionPersonnel.model
+﻿namespace gestionPersonnel.model
 {
     /// <summary>
     /// Classe métier liée à la table Developpeur
@@ -14,7 +8,7 @@ namespace gestionPersonnel.model
         /// <summary>
         /// Valorise les propriétés
         /// </summary>
-        /// <param name="idPersonnel"></param>
+        /// <param name="idpersonnel"></param>
         /// <param name="nom"></param>
         /// <param name="prenom"></param>
         /// <param name="tel"></param>
@@ -30,11 +24,29 @@ namespace gestionPersonnel.model
             this.Service = service;
         }
 
+        /// <summary>
+        /// nombre entier autoincrémenté permettant d'identifier chaque personnel (clé primaire de la table personnel)
+        /// </summary>
         public int Idpersonnel { get; }
+        /// <summary>
+        /// nom du personnel
+        /// </summary>
         public string Nom { get; set; }
+        /// <summary>
+        /// prénom du personnel
+        /// </summary>
         public string Prenom { get; set; }
+        /// <summary>
+        /// numéro de téléphone du personnel
+        /// </summary>
         public string Tel { get; set; }
+        /// <summary>
+        /// adresse mail du personnel
+        /// </summary>
         public string Mail { get; set; }
+        /// <summary>
+        /// service auquel le personnel est affecté
+        /// </summary>
         public Service Service { get; set; }
     }
 }

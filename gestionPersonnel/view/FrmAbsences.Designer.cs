@@ -1,7 +1,7 @@
 ﻿
 namespace gestionPersonnel.view
 {
-    partial class frmAbsences
+    partial class FrmAbsences
     {
         /// <summary>
         /// Required designer variable.

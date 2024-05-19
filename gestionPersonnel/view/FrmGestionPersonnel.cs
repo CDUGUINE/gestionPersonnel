@@ -10,9 +10,15 @@ using System.Windows.Forms;
 
 namespace gestionPersonnel.view
 {
-    public partial class frmAbsences : Form
+    /// <summary>
+    /// fenêtre permettant d'afficher tous les personnels
+    /// </summary>
+    public partial class frmGestionPersonnel : Form
     {
-        public frmAbsences()
+        /// <summary>
+        /// initialisation de la fenêtre
+        /// </summary>
+        public frmGestionPersonnel()
         {
             InitializeComponent();
         }
