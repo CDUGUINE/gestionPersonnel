@@ -28,8 +28,6 @@ namespace gestionPersonnel.view
         /// Controleur de la fenêtre
         /// </summary>
         private FrmGestionPersonnelController controller;
-        private PersonnelAccess personnelAccess = new PersonnelAccess();
-
 
         /// <summary>
         /// initialisation de la fenêtre
@@ -49,7 +47,7 @@ namespace gestionPersonnel.view
             controller = new FrmGestionPersonnelController();
             RemplirListePersonnels();
             RemplirListeServices();
-            //EnCoursModifPersonnel(false);
+            grbEdition.Text = "personnel";
         }
 
         /// <summary>
@@ -62,6 +60,7 @@ namespace gestionPersonnel.view
             dgvPersonnel.DataSource = bdgPersonnels;
             dgvPersonnel.Columns["idpersonnel"].Visible = false;
             dgvPersonnel.AutoSizeColumnsMode = DataGridViewAutoSizeColumnsMode.AllCells;
+            dgvPersonnel.ClearSelection();
         }
 
         /// <summary>
@@ -77,11 +76,9 @@ namespace gestionPersonnel.view
 
         private void btnNouveau_Click(object sender, EventArgs e)
         {
-            grpEdition.Enabled = true;
-            /*frmEditionPersonnel frm = new frmEditionPersonnel();
-            //this.Close();
-            frm.Text = "Nouveau personnel";
-            frm.ShowDialog();*/
+            ViderSaisie();
+            EnCoursDeModifPersonnel(false);
+            txtNom.Focus();
         }
 
         private void btnEnregistrer_Click(object sender, EventArgs e)
@@ -97,17 +94,29 @@ namespace gestionPersonnel.view
             }
             else
             {
-                List<Personnel> lesPersonnels = controller.GetLesPersonnels();
-                int idPersonnel = lesPersonnels.Count + 1;
-                Personnel personnel = new Personnel(idPersonnel, nom, prenom, tel, mail, service);
-                personnelAccess.AddPersonnel(personnel);
+                if (enCoursDeModifPersonnel)
+                {
+                    Personnel personnel = (Personnel)bdgPersonnels.List[bdgPersonnels.Position];
+                    personnel.Nom = nom;
+                    personnel.Prenom = prenom;
+                    personnel.Tel = tel;
+                    personnel.Mail = mail;
+                    personnel.Service = service;
+                    controller.UpdatePersonnel(personnel);
+                }
+                else
+                {
+                    Personnel personnel = new Personnel(1, nom, prenom, tel, mail, service);
+                    controller.AddPersonnel(personnel);
+                }
+                
                 RemplirListePersonnels();
                 ViderSaisie();
             }
         }
 
         /// <summary>
-        /// vide les zones de saisies et désactive le groupe grpEdition
+        /// vide les zones de saisies et désactive le groupe grbEdition
         /// </summary>
         private void ViderSaisie()
         {
@@ -116,12 +125,75 @@ namespace gestionPersonnel.view
             txtTel.Text = String.Empty;
             txtMail.Text = String.Empty;
             cboService.SelectedItem = null;
-            grpEdition.Enabled = false;
+            grbEdition.Enabled = false;
         }
 
         private void btnAnnuler_Click(object sender, EventArgs e)
         {
             ViderSaisie();
+        }
+
+        /// <summary>
+        /// Demande de suppression d'un personnel
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="e"></param>
+        private void btnSupprimer_Click(object sender, EventArgs e)
+        {
+            if (dgvPersonnel.SelectedRows.Count > 0)
+            {
+                Personnel personnel = (Personnel)bdgPersonnels.List[bdgPersonnels.Position];
+                if (MessageBox.Show("Voulez-vous vraiment supprimer " + personnel.Nom + " " + personnel.Prenom + " ?", "Confirmation de suppression", MessageBoxButtons.YesNo) == DialogResult.Yes)
+                {
+                    controller.DelPersonnel(personnel);
+                    RemplirListePersonnels();
+                }
+            }
+            else
+            {
+                MessageBox.Show("Une ligne doit être sélectionnée.", "Information");
+            }
+        }
+
+        /// <summary>
+        ///  Demande de modification d'un personnel
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="e"></param>
+        private void btnModifier_Click(object sender, EventArgs e)
+        {
+            if (dgvPersonnel.SelectedRows.Count > 0)
+            {
+                EnCoursDeModifPersonnel(true);
+                Personnel personnel = (Personnel)bdgPersonnels.List[bdgPersonnels.Position];
+                txtNom.Text = personnel.Nom;
+                txtPrenom.Text = personnel.Prenom;
+                txtTel.Text = personnel.Tel;
+                txtMail.Text = personnel.Mail;
+                cboService.SelectedIndex = cboService.FindStringExact(personnel.Service.Nom);
+            }
+            else
+            {
+                MessageBox.Show("Une ligne doit être sélectionnée.", "Information");
+            }
+        }
+
+        /// <summary>
+        /// Modification d'affichage suivant si on est en cours de modif ou d'ajout d'un personnel
+        /// </summary>
+        /// <param name="modif"></param>
+        private void EnCoursDeModifPersonnel(Boolean modif)
+        {
+            enCoursDeModifPersonnel = modif;
+            grbEdition.Enabled = true;
+            if (modif)
+            {
+                grbEdition.Text = "modifier un personnel";
+            }
+            else
+            {
+                grbEdition.Text = "ajouter un personnel";
+            }
         }
     }
 }

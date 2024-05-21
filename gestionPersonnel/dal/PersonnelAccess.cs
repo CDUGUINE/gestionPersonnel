@@ -97,7 +97,7 @@ namespace gestionPersonnel.dal
         {
             if (access.Manager != null)
             {
-                string req = "delete from personnel where ipersonnel = @idpersonnel;";
+                string req = "delete from personnel where idpersonnel = @idpersonnel;";
                 Dictionary<string, object> parameters = new Dictionary<string, object>();
                 parameters.Add("@idpersonnel", personnel.Idpersonnel);
                 try
@@ -144,7 +144,7 @@ namespace gestionPersonnel.dal
         /// Demande de modification d'un personnel
         /// </summary>
         /// <param name="personnel">objet personnel à modifier</param>
-        public void UpdateDeveloppeur(Personnel personnel)
+        public void UpdatePersonnel(Personnel personnel)
         {
             if (access.Manager != null)
             {
