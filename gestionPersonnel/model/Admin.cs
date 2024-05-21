@@ -10,7 +10,13 @@ namespace gestionPersonnel.model
      /// </summary>
     public class Admin
     {
+        /// <summary>
+        /// nom de l'administrateur
+        /// </summary>
         public string Nom { get; }
+        /// <summary>
+        /// mot de passe de l'administrateur
+        /// </summary>
         public string Pwd { get; }
 
         /// <summary>

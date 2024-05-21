@@ -28,8 +28,7 @@ namespace gestionPersonnel.dal
         /// <summary>
         /// Controle si l'utillisateur a le droit de se connecter (nom et pwd)
         /// </summary>
-        /// <param name="nom"></param>
-        /// <param name="pwd"></param>
+        /// <param name="admin"></param>
         public Boolean ControleAuthentification(Admin admin)
         {
             if (access.Manager != null)
