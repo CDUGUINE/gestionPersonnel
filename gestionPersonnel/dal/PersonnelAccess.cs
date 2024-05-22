@@ -34,9 +34,11 @@ namespace gestionPersonnel.dal
             if (access.Manager != null)
             {
                 string req = "select * from responsable where login=@nom and pwd=SHA2(@pwd, 256);";
-                Dictionary<string, object> parameters = new Dictionary<string, object>();
-                parameters.Add("@nom", admin.Nom);
-                parameters.Add("@pwd", admin.Pwd);
+                Dictionary<string, object> parameters = new Dictionary<string, object>
+                {
+                    { "@nom", admin.Nom },
+                    { "@pwd", admin.Pwd }
+                };
                 try
                 {
                     List<Object[]> records = access.Manager.ReqSelect(req, parameters);
@@ -98,8 +100,10 @@ namespace gestionPersonnel.dal
             if (access.Manager != null)
             {
                 string req = "delete from personnel where idpersonnel = @idpersonnel;";
-                Dictionary<string, object> parameters = new Dictionary<string, object>();
-                parameters.Add("@idpersonnel", personnel.Idpersonnel);
+                Dictionary<string, object> parameters = new Dictionary<string, object>
+                {
+                    { "@idpersonnel", personnel.Idpersonnel }
+                };
                 try
                 {
                     access.Manager.ReqUpdate(req, parameters);
@@ -113,7 +117,7 @@ namespace gestionPersonnel.dal
         }
 
         /// <summary>
-        /// Demande d'ajout un personnel
+        /// Demande d'ajout d'un personnel
         /// </summary>
         /// <param name="personnel">objet personnel à ajouter</param>
         public void AddPersonnel(Personnel personnel)
@@ -122,12 +126,14 @@ namespace gestionPersonnel.dal
             {
                 string req = "insert into personnel(nom, prenom, tel, mail, idservice) ";
                 req += "values (@nom, @prenom, @tel, @mail, @idservice);";
-                Dictionary<string, object> parameters = new Dictionary<string, object>();
-                parameters.Add("@nom", personnel.Nom);
-                parameters.Add("@prenom", personnel.Prenom);
-                parameters.Add("@tel", personnel.Tel);
-                parameters.Add("@mail", personnel.Mail);
-                parameters.Add("@idservice", personnel.Service.Idservice);
+                Dictionary<string, object> parameters = new Dictionary<string, object>
+                {
+                    { "@nom", personnel.Nom },
+                    { "@prenom", personnel.Prenom },
+                    { "@tel", personnel.Tel },
+                    { "@mail", personnel.Mail },
+                    { "@idservice", personnel.Service.Idservice }
+                };
                 try
                 {
                     access.Manager.ReqUpdate(req, parameters);
@@ -150,13 +156,15 @@ namespace gestionPersonnel.dal
             {
                 string req = "update personnel set nom = @nom, prenom = @prenom, tel = @tel, mail = @mail, idservice = @idservice ";
                 req += "where idpersonnel = @idpersonnel;";
-                Dictionary<string, object> parameters = new Dictionary<string, object>();
-                parameters.Add("@idPersonnel", personnel.Idpersonnel);
-                parameters.Add("@nom", personnel.Nom);
-                parameters.Add("@prenom", personnel.Prenom);
-                parameters.Add("@tel", personnel.Tel);
-                parameters.Add("@mail", personnel.Mail);
-                parameters.Add("@idservice", personnel.Service.Idservice);
+                Dictionary<string, object> parameters = new Dictionary<string, object>
+                {
+                    { "@idPersonnel", personnel.Idpersonnel },
+                    { "@nom", personnel.Nom },
+                    { "@prenom", personnel.Prenom },
+                    { "@tel", personnel.Tel },
+                    { "@mail", personnel.Mail },
+                    { "@idservice", personnel.Service.Idservice }
+                };
                 try
                 {
                     access.Manager.ReqUpdate(req, parameters);

@@ -1,5 +1,4 @@
 ﻿using gestionPersonnel.controller;
-using gestionPersonnel.dal;
 using gestionPersonnel.model;
 using System;
 using System.Collections.Generic;
@@ -28,6 +27,7 @@ namespace gestionPersonnel.view
         /// Controleur de la fenêtre
         /// </summary>
         private FrmGestionPersonnelController controller;
+
 
         /// <summary>
         /// initialisation de la fenêtre
@@ -74,14 +74,14 @@ namespace gestionPersonnel.view
             cboService.SelectedItem = null;
         }
 
-        private void btnNouveau_Click(object sender, EventArgs e)
+        private void BtnNouveau_Click(object sender, EventArgs e)
         {
             ViderSaisie();
             EnCoursDeModifPersonnel(false);
             txtNom.Focus();
         }
 
-        private void btnEnregistrer_Click(object sender, EventArgs e)
+        private void BtnEnregistrer_Click(object sender, EventArgs e)
         {
             String nom = txtNom.Text;
             String prenom = txtPrenom.Text;
@@ -128,7 +128,7 @@ namespace gestionPersonnel.view
             grbEdition.Enabled = false;
         }
 
-        private void btnAnnuler_Click(object sender, EventArgs e)
+        private void BtnAnnuler_Click(object sender, EventArgs e)
         {
             ViderSaisie();
         }
@@ -138,7 +138,7 @@ namespace gestionPersonnel.view
         /// </summary>
         /// <param name="sender"></param>
         /// <param name="e"></param>
-        private void btnSupprimer_Click(object sender, EventArgs e)
+        private void BtnSupprimer_Click(object sender, EventArgs e)
         {
             if (dgvPersonnel.SelectedRows.Count > 0)
             {
@@ -160,7 +160,7 @@ namespace gestionPersonnel.view
         /// </summary>
         /// <param name="sender"></param>
         /// <param name="e"></param>
-        private void btnModifier_Click(object sender, EventArgs e)
+        private void BtnModifier_Click(object sender, EventArgs e)
         {
             if (dgvPersonnel.SelectedRows.Count > 0)
             {
@@ -194,6 +194,23 @@ namespace gestionPersonnel.view
             {
                 grbEdition.Text = "ajouter un personnel";
             }
+        }
+
+        /// <summary>
+        /// Demande d'affichage des absences d'un personnel
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="e"></param>
+        private void BtnAfficher_Click(object sender, EventArgs e)
+        {
+            FrmAbsences frm = new FrmAbsences();
+            Personnel personnel = (Personnel)bdgPersonnels.List[bdgPersonnels.Position];
+            String nom = personnel.Nom;
+            String prenom = personnel.Prenom;
+            frm.idperso = personnel.Idpersonnel;
+            // frm.idperso à enlever après tests
+            frm.Text = "Absences de " + frm.idperso + " " + prenom + " " + nom;
+            frm.ShowDialog();
         }
     }
 }

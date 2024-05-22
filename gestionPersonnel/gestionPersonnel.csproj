@@ -77,13 +77,18 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="bddmanager\BddManager.cs" />
+    <Compile Include="controller\FrmAbsencesController.cs" />
     <Compile Include="controller\FrmAuthentificationController.cs" />
     <Compile Include="controller\FrmGestionPersonnelController.cs" />
+    <Compile Include="dal\AbsencesAccess.cs" />
     <Compile Include="dal\Access.cs" />
+    <Compile Include="dal\MotifAccess.cs" />
     <Compile Include="dal\PersonnelAccess.cs" />
     <Compile Include="dal\ServiceAccess.cs" />
+    <Compile Include="model\Absence.cs" />
     <Compile Include="model\Admin.cs" />
-    <Compile Include="model\personnel.cs" />
+    <Compile Include="model\Motif.cs" />
+    <Compile Include="model\Personnel.cs" />
     <Compile Include="model\service.cs" />
     <Compile Include="obj\Debug\.NETFramework,Version=v4.7.2.AssemblyAttributes.cs" />
     <Compile Include="Program.cs" />
@@ -106,12 +111,6 @@
     <Compile Include="view\FrmAbsences.Designer.cs">
       <DependentUpon>FrmAbsences.cs</DependentUpon>
     </Compile>
-    <Compile Include="view\FrmAbsenceNouvMod.cs">
-      <SubType>Form</SubType>
-    </Compile>
-    <Compile Include="view\FrmAbsenceNouvMod.Designer.cs">
-      <DependentUpon>FrmAbsenceNouvMod.cs</DependentUpon>
-    </Compile>
     <EmbeddedResource Include="Properties\Resources.resx">
       <Generator>ResXFileCodeGenerator</Generator>
       <LastGenOutput>Resources.Designer.cs</LastGenOutput>
@@ -129,9 +128,6 @@
     </EmbeddedResource>
     <EmbeddedResource Include="view\FrmAbsences.resx">
       <DependentUpon>FrmAbsences.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="view\FrmAbsenceNouvMod.resx">
-      <DependentUpon>FrmAbsenceNouvMod.cs</DependentUpon>
     </EmbeddedResource>
     <None Include="bin\Debug\gestionPersonnel.exe.config" />
     <None Include="packages.config" />

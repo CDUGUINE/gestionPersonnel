@@ -45,7 +45,7 @@ namespace gestionPersonnel.view
         /// </summary>
         /// <param name="sender"></param>
         /// <param name="e"></param>
-        private void btnValider_Click(object sender, EventArgs e)
+        private void BtnValider_Click(object sender, EventArgs e)
         {
             String nom = txtNom.Text;
             String pwd = txtPwd.Text;

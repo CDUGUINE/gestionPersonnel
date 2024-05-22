@@ -7,10 +7,7 @@ using System.Threading.Tasks;
 
 namespace gestionPersonnel.dal
 {
-    /// <summary>
-    /// Classe permettant de gérer les demandes concernant les services
-    /// </summary>
-    class ServiceAccess
+    class MotifAccess
     {
         /// <summary>
         /// Instance unique de l'accès aux données
@@ -20,7 +17,7 @@ namespace gestionPersonnel.dal
         /// <summary>
         /// Constructeur pour créer l'accès aux données
         /// </summary>
-        public ServiceAccess()
+        public MotifAccess()
         {
             access = Access.GetInstance();
         }
@@ -29,12 +26,12 @@ namespace gestionPersonnel.dal
         /// Récupère et retourne les services
         /// </summary>
         /// <returns>liste des services</returns>
-        public List<Service> GetLesServices()
+        public List<Motif> GetLesMotifs()
         {
-            List<Service> lesServices = new List<Service>();
+            List<Motif> lesMotifs = new List<Motif>();
             if (access.Manager != null)
             {
-                string req = "select * from service order by idservice;";
+                string req = "select * from motif order by idmotif;";
                 try
                 {
                     List<Object[]> records = access.Manager.ReqSelect(req);
@@ -42,8 +39,8 @@ namespace gestionPersonnel.dal
                     {
                         foreach (Object[] record in records)
                         {
-                            Service service = new Service((int)record[0], (string)record[1]);
-                            lesServices.Add(service);
+                            Motif motif = new Motif((int)record[0], (string)record[1]);
+                            lesMotifs.Add(motif);
                         }
                     }
                 }
@@ -53,8 +50,7 @@ namespace gestionPersonnel.dal
                     Environment.Exit(0);
                 }
             }
-            return lesServices;
+            return lesMotifs;
         }
-
     }
 }

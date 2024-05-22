@@ -62,7 +62,7 @@ namespace gestionPersonnel.view
             this.btnValider.TabIndex = 2;
             this.btnValider.Text = "Valider";
             this.btnValider.UseVisualStyleBackColor = true;
-            this.btnValider.Click += new System.EventHandler(this.btnValider_Click);
+            this.btnValider.Click += new System.EventHandler(this.BtnValider_Click);
             // 
             // txtNom
             // 

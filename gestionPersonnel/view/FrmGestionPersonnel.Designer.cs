@@ -75,7 +75,7 @@ namespace gestionPersonnel.view
             this.btnModifier.TabIndex = 2;
             this.btnModifier.Text = "Modifier";
             this.btnModifier.UseVisualStyleBackColor = true;
-            this.btnModifier.Click += new System.EventHandler(this.btnModifier_Click);
+            this.btnModifier.Click += new System.EventHandler(this.BtnModifier_Click);
             // 
             // btnSupprimer
             // 
@@ -85,7 +85,7 @@ namespace gestionPersonnel.view
             this.btnSupprimer.TabIndex = 1;
             this.btnSupprimer.Text = "Supprimer";
             this.btnSupprimer.UseVisualStyleBackColor = true;
-            this.btnSupprimer.Click += new System.EventHandler(this.btnSupprimer_Click);
+            this.btnSupprimer.Click += new System.EventHandler(this.BtnSupprimer_Click);
             // 
             // btnNouveau
             // 
@@ -95,7 +95,7 @@ namespace gestionPersonnel.view
             this.btnNouveau.TabIndex = 0;
             this.btnNouveau.Text = "Nouveau";
             this.btnNouveau.UseVisualStyleBackColor = true;
-            this.btnNouveau.Click += new System.EventHandler(this.btnNouveau_Click);
+            this.btnNouveau.Click += new System.EventHandler(this.BtnNouveau_Click);
             // 
             // grpAbsences
             // 
@@ -115,6 +115,7 @@ namespace gestionPersonnel.view
             this.btnAfficher.TabIndex = 0;
             this.btnAfficher.Text = "Afficher";
             this.btnAfficher.UseVisualStyleBackColor = true;
+            this.btnAfficher.Click += new System.EventHandler(this.BtnAfficher_Click);
             // 
             // dgvPersonnel
             // 
@@ -159,7 +160,7 @@ namespace gestionPersonnel.view
             this.btnAnnuler.TabIndex = 11;
             this.btnAnnuler.Text = "Annuler";
             this.btnAnnuler.UseVisualStyleBackColor = true;
-            this.btnAnnuler.Click += new System.EventHandler(this.btnAnnuler_Click);
+            this.btnAnnuler.Click += new System.EventHandler(this.BtnAnnuler_Click);
             // 
             // btnEnregistrer
             // 
@@ -169,7 +170,7 @@ namespace gestionPersonnel.view
             this.btnEnregistrer.TabIndex = 10;
             this.btnEnregistrer.Text = "Enregistrer";
             this.btnEnregistrer.UseVisualStyleBackColor = true;
-            this.btnEnregistrer.Click += new System.EventHandler(this.btnEnregistrer_Click);
+            this.btnEnregistrer.Click += new System.EventHandler(this.BtnEnregistrer_Click);
             // 
             // label5
             // 
