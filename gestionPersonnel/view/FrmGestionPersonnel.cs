@@ -195,7 +195,7 @@ namespace gestionPersonnel.view
                 grbEdition.Text = "ajouter un personnel";
             }
         }
-
+        
         /// <summary>
         /// Demande d'affichage des absences d'un personnel
         /// </summary>
@@ -209,7 +209,7 @@ namespace gestionPersonnel.view
             String prenom = personnel.Prenom;
             frm.idperso = personnel.Idpersonnel;
             // frm.idperso à enlever après tests
-            frm.Text = "Absences de " + frm.idperso + " " + prenom + " " + nom;
+            frm.Text = "Absences de " + prenom + " " + nom;
             frm.ShowDialog();
         }
     }

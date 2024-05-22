@@ -13,11 +13,6 @@ namespace gestionPersonnel.controller
         /// <summary>
         /// objet d'accès aux opérations possibles sur Developpeur
         /// </summary>
-        private readonly AbsencesAccess absencesAccess;
-
-        /// <summary>
-        /// objet d'accès aux opérations possibles sur Developpeur
-        /// </summary>
         private readonly PersonnelAccess personnelAccess;
         /// <summary>
         /// objet d'accès aux opérations possible sur Service

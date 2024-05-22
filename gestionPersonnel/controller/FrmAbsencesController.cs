@@ -1,5 +1,6 @@
 ﻿using gestionPersonnel.dal;
 using gestionPersonnel.model;
+using System;
 using System.Collections.Generic;
 
 namespace gestionPersonnel.controller
@@ -58,9 +59,19 @@ namespace gestionPersonnel.controller
         /// Demande de modification d'une absence
         /// </summary>
         /// <param name="absence">objet absence à modifier</param>
-        public void UpdateAbsence(Absence absence)
+        /// <param name="date"></param>
+        public void UpdateAbsence(Absence absence, DateTime date)
         {
-            absencesAccess.UpdateAbsence(absence);
+            absencesAccess.UpdateAbsence(absence, date);
+        }
+
+        /// <summary>
+        /// Demande de suppression d'une absence
+        /// </summary>
+        /// <param name="absence">objet absence à supprimer</param>
+        public void DelAbsence(Absence absence)
+        {
+            absencesAccess.DelAbsence(absence);
         }
     }
 }

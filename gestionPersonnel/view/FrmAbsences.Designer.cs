@@ -74,6 +74,7 @@ namespace gestionPersonnel.view
             this.btnSupprimer.TabIndex = 2;
             this.btnSupprimer.Text = "Supprimer";
             this.btnSupprimer.UseVisualStyleBackColor = true;
+            this.btnSupprimer.Click += new System.EventHandler(this.BtnSupprimer_Click);
             // 
             // btnModifier
             // 
@@ -83,6 +84,7 @@ namespace gestionPersonnel.view
             this.btnModifier.TabIndex = 3;
             this.btnModifier.Text = "Modifier";
             this.btnModifier.UseVisualStyleBackColor = true;
+            this.btnModifier.Click += new System.EventHandler(this.BtnModifier_Click);
             // 
             // grbEdition
             // 
@@ -91,6 +93,7 @@ namespace gestionPersonnel.view
             this.grbEdition.Controls.Add(this.label4);
             this.grbEdition.Controls.Add(this.cboMotif);
             this.grbEdition.Controls.Add(this.calAbsence);
+            this.grbEdition.Enabled = false;
             this.grbEdition.Location = new System.Drawing.Point(279, 13);
             this.grbEdition.Name = "grbEdition";
             this.grbEdition.Size = new System.Drawing.Size(249, 266);
@@ -106,6 +109,7 @@ namespace gestionPersonnel.view
             this.btnAnnuler.TabIndex = 7;
             this.btnAnnuler.Text = "Annuler";
             this.btnAnnuler.UseVisualStyleBackColor = true;
+            this.btnAnnuler.Click += new System.EventHandler(this.BtnAnnuler_Click);
             // 
             // btnEnregistrer
             // 

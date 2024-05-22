@@ -32,6 +32,11 @@ namespace gestionPersonnel.view
         private FrmAbsencesController controller;
 
         /// <summary>
+        /// stockage de la date de début avant modification
+        /// </summary>
+        public DateTime dateDebInit;
+
+        /// <summary>
         /// initialisation de la fenêtre
         /// </summary>
         public FrmAbsences()
@@ -133,7 +138,7 @@ namespace gestionPersonnel.view
                     absence.DateDebut = datedebut;
                     absence.DateFin = datefin;
                     absence.Motif = motif;
-                    controller.UpdateAbsence(absence);
+                    controller.UpdateAbsence(absence, dateDebInit);
                 }
                 else
                 {
@@ -143,6 +148,45 @@ namespace gestionPersonnel.view
 
                 RemplirListeAbsences();
                 ViderSaisie();
+            }
+        }
+
+        private void BtnAnnuler_Click(object sender, EventArgs e)
+        {
+            ViderSaisie();
+        }
+
+        private void BtnModifier_Click(object sender, EventArgs e)
+        {
+            if (dgvAbsences.SelectedRows.Count > 0)
+            {
+                EnCoursDeModifAbsence(true);
+                Absence absence = (Absence)bdgAbsences.List[bdgAbsences.Position];
+                calAbsence.SelectionStart = absence.DateDebut;
+                dateDebInit = absence.DateDebut;
+                calAbsence.SelectionEnd = absence.DateFin;
+                cboMotif.SelectedIndex = cboMotif.FindStringExact(absence.Motif.Nom);
+            }
+            else
+            {
+                MessageBox.Show("Une ligne doit être sélectionnée.", "Information");
+            }
+        }
+
+        private void BtnSupprimer_Click(object sender, EventArgs e)
+        {
+            if (dgvAbsences.SelectedRows.Count > 0)
+            {
+                Absence absence = (Absence)bdgAbsences.List[bdgAbsences.Position];
+                if (MessageBox.Show("Voulez-vous vraiment supprimer cette absence ?", "Confirmation de suppression", MessageBoxButtons.YesNo) == DialogResult.Yes)
+                {
+                    controller.DelAbsence(absence);
+                    RemplirListeAbsences();
+                }
+            }
+            else
+            {
+                MessageBox.Show("Une ligne doit être sélectionnée.", "Information");
             }
         }
     }

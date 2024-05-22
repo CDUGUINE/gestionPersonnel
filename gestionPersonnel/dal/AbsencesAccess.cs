@@ -61,45 +61,21 @@ namespace gestionPersonnel.dal
             }
             return lesAbsences;
         }
-        /*
+        
         /// <summary>
-        /// Demande de suppression d'un personnel
+        /// Demande de suppression d'une absence
         /// </summary>
-        /// <param name="personnel">objet personnel à supprimer</param>
-        public void DelPersonnel(Personnel personnel)
+        /// <param name="absence">objet absence à supprimer</param>
+        public void DelAbsence(Absence absence)
         {
             if (access.Manager != null)
             {
-                string req = "delete from personnel where idpersonnel = @idpersonnel;";
-                Dictionary<string, object> parameters = new Dictionary<string, object>();
-                parameters.Add("@idpersonnel", personnel.Idpersonnel);
-                try
+                string req = "delete from absence where idpersonnel = @idpersonnel and datedebut = @datedebut;";
+                Dictionary<string, object> parameters = new Dictionary<string, object>
                 {
-                    access.Manager.ReqUpdate(req, parameters);
-                }
-                catch (Exception e)
-                {
-                    Console.WriteLine(e.Message);
-                    Environment.Exit(0);
-                }
-            }
-        }*/
-
-        /// <summary>
-        /// Demande d'ajout d'une absence
-        /// </summary>
-        /// <param name="absence">objet absence à ajouter</param>
-        public void AddAbsence(Absence absence)
-        {
-            if (access.Manager != null)
-            {
-                string req = "insert into absence(idpersonnel, datedebut, datefin, idmotif) ";
-                req += "values (@idpersonnel, @datedebut, @datefin, @idmotif);";
-                Dictionary<string, object> parameters = new Dictionary<string, object>();
-                parameters.Add("@idpersonnel", absence.Idpersonnel);
-                parameters.Add("@datedebut", absence.DateDebut);
-                parameters.Add("@datefin", absence.DateFin);
-                parameters.Add("@idmotif", absence.Motif.Idmotif);
+                    { "@idpersonnel", absence.Idpersonnel },
+                    { "@datedebut", absence.DateDebut }
+                };
                 try
                 {
                     access.Manager.ReqUpdate(req, parameters);
@@ -111,22 +87,55 @@ namespace gestionPersonnel.dal
                 }
             }
         }
-        
+
+        /// <summary>
+        /// Demande d'ajout d'une absence
+        /// </summary>
+        /// <param name="absence">objet absence à ajouter</param>
+        public void AddAbsence(Absence absence)
+        {
+            if (access.Manager != null)
+            {
+                string req = "insert into absence(idpersonnel, datedebut, datefin, idmotif) ";
+                req += "values (@idpersonnel, @datedebut, @datefin, @idmotif);";
+                Dictionary<string, object> parameters = new Dictionary<string, object>
+                {
+                    { "@idpersonnel", absence.Idpersonnel },
+                    { "@datedebut", absence.DateDebut },
+                    { "@datefin", absence.DateFin },
+                    { "@idmotif", absence.Motif.Idmotif }
+                };
+                try
+                {
+                    access.Manager.ReqUpdate(req, parameters);
+                }
+                catch (Exception e)
+                {
+                    Console.WriteLine(e.Message);
+                    Environment.Exit(0);
+                }
+            }
+        }
+
         /// <summary>
         /// Demande de modification d'une absence
         /// </summary>
         /// <param name="absence">objet absence à modifier</param>
-        public void UpdateAbsence(Absence absence)
+        /// <param name="date"></param>
+        public void UpdateAbsence(Absence absence, DateTime date)
         {
             if (access.Manager != null)
             {
                 string req = "update absence set datedebut = @datedebut, datefin = @datefin, idmotif = @idmotif ";
-                req += "where idpersonnel = @idpersonnel;";
-                Dictionary<string, object> parameters = new Dictionary<string, object>();
-                parameters.Add("@idPersonnel", 4);
-                parameters.Add("@datedebut", absence.DateDebut);
-                parameters.Add("@datefin", absence.DateFin);
-                parameters.Add("@idmotif", absence.Motif.Idmotif);
+                req += "where idpersonnel = @idpersonnel and datedebut = @datedebinit;";
+                Dictionary<string, object> parameters = new Dictionary<string, object>
+                {
+                    { "@idPersonnel", absence.Idpersonnel },
+                    { "@datedebinit", date },
+                    { "@datedebut", absence.DateDebut },
+                    { "@datefin", absence.DateFin },
+                    { "@idmotif", absence.Motif.Idmotif }
+                };
                 try
                 {
                     access.Manager.ReqUpdate(req, parameters);
