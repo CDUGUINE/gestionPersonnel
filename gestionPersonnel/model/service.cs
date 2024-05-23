@@ -1,7 +1,7 @@
 ﻿namespace gestionPersonnel.model
 {
     /// <summary>
-    /// Service dans lequel le personnel est affecté
+    /// Classe métier lié à la table service
     /// </summary>
     public class Service
     {
@@ -17,8 +17,8 @@
         /// <summary>
         /// Valorise les propriétés
         /// </summary>
-        /// <param name="idservice"></param>
-        /// <param name="nom"></param>
+        /// <param name="idservice">clé de la table service</param>
+        /// <param name="nom">nom du service</param>
         public Service(int idservice, string nom)
         {
             this.Idservice = idservice;

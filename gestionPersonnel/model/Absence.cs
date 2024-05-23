@@ -3,17 +3,17 @@
 namespace gestionPersonnel.model
 {
     /// <summary>
-    /// Classe métier liée à la table Absence
+    /// Classe métier liée à la table absence
     /// </summary>
     public class Absence
     {
         /// <summary>
         /// Valorise les propriétés
         /// </summary>
-        /// <param name="idpersonnel"></param>
-        /// <param name="dateDebut"></param>
-        /// <param name="dateFin"></param>
-        /// <param name="motif"></param>
+        /// <param name="idpersonnel">clé de la table personnel</param>
+        /// <param name="dateDebut">date de début de l'absence</param>
+        /// <param name="dateFin">date de fin de l'absence</param>
+        /// <param name="motif">motif de l'absence</param>
         public Absence(int idpersonnel, DateTime dateDebut, DateTime dateFin, Motif motif)
         {
             this.Idpersonnel = idpersonnel;
@@ -27,15 +27,15 @@ namespace gestionPersonnel.model
         /// </summary>
         public int Idpersonnel { get; }
         /// <summary>
-        /// nom du personnel
+        /// date de début
         /// </summary>
         public DateTime DateDebut { get; set; }
         /// <summary>
-        /// prénom du personnel
+        /// date de fin
         /// </summary>
         public DateTime DateFin { get; set; }
         /// <summary>
-        /// numéro de téléphone du personnel
+        /// motif de l'absence
         /// </summary>
         public Motif Motif { get; set; }
     }

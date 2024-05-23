@@ -1,16 +1,13 @@
 ﻿using gestionPersonnel.model;
 using System;
 using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 
 namespace gestionPersonnel.dal
 {
     /// <summary>
     /// Classe permettant de gérer les demandes concernant les absences
     /// </summary>
-    class AbsencesAccess
+    public class AbsencesAccess
     {
         /// <summary>
         /// Instance unique de l'accès aux données
@@ -28,6 +25,7 @@ namespace gestionPersonnel.dal
         /// <summary>
         /// Récupère et retourne les absences
         /// </summary>
+        /// <param name="idperso">identifiant du personnel</param>
         /// <returns>liste des absences</returns>
         public List<Absence> GetLesAbsences(int idperso)
         {
@@ -121,7 +119,7 @@ namespace gestionPersonnel.dal
         /// Demande de modification d'une absence
         /// </summary>
         /// <param name="absence">objet absence à modifier</param>
-        /// <param name="date"></param>
+        /// <param name="date">date de début</param>
         public void UpdateAbsence(Absence absence, DateTime date)
         {
             if (access.Manager != null)

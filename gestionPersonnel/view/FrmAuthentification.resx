@@ -117,4 +117,29 @@
   <resheader name="writer">
     <value>System.Resources.ResXResourceWriter, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </resheader>
+  <assembly alias="System.Drawing" name="System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a" />
+  <data name="$this.Icon" type="System.Drawing.Icon, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
+    <value>
+        AAABAAEAEBAAAAEAIABoBAAAFgAAACgAAAAQAAAAIAAAAAEAIAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA
+        AACCYBX/gmAV/4JgFf+CYBX/gmAV/4JgFf+CYBX/gmAV/4JgFf+CYBX/gmAV/4JgFf+CYBX/gmAV/4Jg
+        Ff+CYBX/gmAV/4JgFf+CYBX/gmAV/4JgFf+CYBX/gmAV/4JgFf+CYBX/gmAV/4JgFf+CYBX/gmAV/4Jg
+        Ff+CYBX/gmAV/4JgFf+CYBX/gmAV/4JgFf+CYBX/gmAV/4JgFf+CYBX/gmAV/4JgFf+CYBX/gmAV/4Jg
+        Ff+CYBX/gmAV/4JgFf+CYBX/gmAV/4JgFf+CYBX/gmAV/4JgFf+CYBX/gmAV/5+FS//Jupn/yrub/6qT
+        YP+CYBX/gmAV/4JgFf+CYBX/gmAV/4JgFf+CYBX/gmAV/4JgFf+CYBX/gmAV/4JgFf+jiVL///7+////
+        //+6p37/gmAV/4JgFf+CYBX/gmAV/4JgFf+CYBX/gmAV/4JgFf+CYBX/gmAV/4JgFf+CYBX/gmAV//z7
+        +f//////nYJH/4xsJ/+CYBX/gmAV/4JgFf+CYBX/gmAV/4JgFf+YfD7/uqd9/7qnff+WeTr/gmAV/4Jg
+        Ff/7+vf///////79/f/+/fz/2M63/4ZlHP+CYBX/gmAV/4JgFf/BsIr//v79///////6+fb//fz7/66Y
+        aP+CYBX/+/r3//////+bgET/5N3N//////+wmmr/gmAV/4JgFf+ghkz//v7+//////++rYb/kHIw//38
+        +//x7uX/h2cf//z8+v//////nIFF/+fg0v//////sZts/4JgFf+CYBX/w7KO///////29O//hmUd/+bf
+        0P///v7//v79//Ty6//49vH/+ffz//39+//+/fz/29G7/4dmH/+CYBX/gmAV/7+uh///////6+ba/4Jg
+        Ff+EYxn/kHIw/5V4Of+DYRb/gmAV/4RiGP+MbSj/jGwn/4JgFf+CYBX/gmAV/4JgFf+Udjb/+/n3//v6
+        9/+WeTr/iGgh/9zTvv/u6uD/gmAV/4JgFf+CYBX/gmAV/4JgFf+CYBX/gmAV/4JgFf+CYBX/gmAV/6eP
+        W//y7ub/+/r4//j28v/6+PX/2M63/4JgFf+CYBX/gmAV/4JgFf+CYBX/gmAV/4JgFf+CYBX/gmAV/4Jg
+        Ff+CYBX/hWQb/5l9P/+Xejv/hmUc/4RjGf+CYBX/gmAV/4JgFf+CYBX/gmAV/4JgFf+CYBX/gmAV/4Jg
+        Ff+CYBX/gmAV/4JgFf+CYBX/gmAV/4JgFf+CYBX/gmAV/4JgFf+CYBX/gmAV/4JgFf+CYBX/gmAV/4Jg
+        Ff+CYBX/gmAV/4JgFf+CYBX/gmAV/4JgFf+CYBX/gmAV/4JgFf+CYBX/gmAV/4JgFf+CYBX/gmAV/4Jg
+        Ff+CYBX/AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA
+        AAAAAAAAAAAAAA==
+</value>
+  </data>
 </root>

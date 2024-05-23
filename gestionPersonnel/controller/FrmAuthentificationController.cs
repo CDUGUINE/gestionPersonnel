@@ -1,10 +1,6 @@
 ﻿using gestionPersonnel.dal;
 using gestionPersonnel.model;
 using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 
 namespace gestionPersonnel.controller
 {
@@ -19,7 +15,7 @@ namespace gestionPersonnel.controller
         private readonly PersonnelAccess personnelAccess;
 
         /// <summary>
-        /// Récupère l'acces aux données
+        /// Récupère l'accès aux données
         /// </summary>
         public FrmAuthentificationController()
         {

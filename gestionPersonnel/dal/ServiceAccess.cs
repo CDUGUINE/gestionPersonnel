@@ -1,16 +1,13 @@
 ﻿using gestionPersonnel.model;
 using System;
 using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 
 namespace gestionPersonnel.dal
 {
     /// <summary>
     /// Classe permettant de gérer les demandes concernant les services
     /// </summary>
-    class ServiceAccess
+    public class ServiceAccess
     {
         /// <summary>
         /// Instance unique de l'accès aux données

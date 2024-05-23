@@ -1,7 +1,7 @@
 ﻿
 namespace gestionPersonnel.view
 {
-    partial class frmGestionPersonnel
+    partial class FrmGestionPersonnel
     {
         /// <summary>
         /// Required designer variable.
@@ -29,6 +29,7 @@ namespace gestionPersonnel.view
         /// </summary>
         private void InitializeComponent()
         {
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(FrmGestionPersonnel));
             this.grpPersonnel = new System.Windows.Forms.GroupBox();
             this.btnModifier = new System.Windows.Forms.Button();
             this.btnSupprimer = new System.Windows.Forms.Button();
@@ -49,6 +50,7 @@ namespace gestionPersonnel.view
             this.txtNom = new System.Windows.Forms.TextBox();
             this.label2 = new System.Windows.Forms.Label();
             this.label1 = new System.Windows.Forms.Label();
+            this.btnQuitter = new System.Windows.Forms.Button();
             this.grpPersonnel.SuspendLayout();
             this.grpAbsences.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dgvPersonnel)).BeginInit();
@@ -254,17 +256,29 @@ namespace gestionPersonnel.view
             this.label1.TabIndex = 0;
             this.label1.Text = "nom";
             // 
+            // btnQuitter
+            // 
+            this.btnQuitter.Location = new System.Drawing.Point(494, 199);
+            this.btnQuitter.Name = "btnQuitter";
+            this.btnQuitter.Size = new System.Drawing.Size(75, 23);
+            this.btnQuitter.TabIndex = 5;
+            this.btnQuitter.Text = "Quitter";
+            this.btnQuitter.UseVisualStyleBackColor = true;
+            this.btnQuitter.Click += new System.EventHandler(this.BtnQuitter_Click);
+            // 
             // frmGestionPersonnel
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(589, 358);
+            this.Controls.Add(this.btnQuitter);
             this.Controls.Add(this.grbEdition);
             this.Controls.Add(this.dgvPersonnel);
             this.Controls.Add(this.grpAbsences);
             this.Controls.Add(this.grpPersonnel);
+            this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.Name = "frmGestionPersonnel";
-            this.Text = "Gestion du personnel";
+            this.Text = "GestionPersonnel - Gestion du personnel";
             this.grpPersonnel.ResumeLayout(false);
             this.grpAbsences.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.dgvPersonnel)).EndInit();
@@ -295,5 +309,6 @@ namespace gestionPersonnel.view
         private System.Windows.Forms.TextBox txtNom;
         private System.Windows.Forms.Label label2;
         private System.Windows.Forms.Label label1;
+        private System.Windows.Forms.Button btnQuitter;
     }
 }

@@ -1,19 +1,19 @@
 ﻿namespace gestionPersonnel.model
 {
     /// <summary>
-    /// Classe métier liée à la table Personnel
+    /// Classe métier liée à la table personnel
     /// </summary>
     public class Personnel
     {
         /// <summary>
         /// Valorise les propriétés
         /// </summary>
-        /// <param name="idpersonnel"></param>
-        /// <param name="nom"></param>
-        /// <param name="prenom"></param>
-        /// <param name="tel"></param>
-        /// <param name="mail"></param>
-        /// <param name="service"></param>
+        /// <param name="idpersonnel">clé de la table personnel</param>
+        /// <param name="nom">nom</param>
+        /// <param name="prenom">prénom</param>
+        /// <param name="tel">numéro de téléphone</param>
+        /// <param name="mail">adresse mail</param>
+        /// <param name="service">service auquel le personnel est affecté</param>
         public Personnel(int idpersonnel, string nom, string prenom, string tel, string mail, Service service)
         {
             this.Idpersonnel = idpersonnel;

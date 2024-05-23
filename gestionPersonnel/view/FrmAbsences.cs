@@ -106,7 +106,7 @@ namespace gestionPersonnel.view
         /// <summary>
         /// Modification d'affichage suivant si on est en cours de modif ou d'ajout d'une absence
         /// </summary>
-        /// <param name="modif"></param>
+        /// <param name="modif">boléen qui vérifie si l'on modifie</param>
         private void EnCoursDeModifAbsence(Boolean modif)
         {
             enCoursDeModifAbsence = modif;
@@ -188,6 +188,11 @@ namespace gestionPersonnel.view
             {
                 MessageBox.Show("Une ligne doit être sélectionnée.", "Information");
             }
+        }
+
+        private void BtnFermer_Click(object sender, EventArgs e)
+        {
+            Close();
         }
     }
 }

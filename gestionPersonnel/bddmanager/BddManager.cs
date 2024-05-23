@@ -21,7 +21,7 @@ namespace gestionPersonnel.bddmanager
         /// <summary>
         /// Constructeur pour créer la connexion à la BDD et l'ouvrir
         /// </summary>
-        /// <param name="stringConnect">chaine de connexion</param>
+        /// <param name="stringConnect">chaîne de connexion</param>
         private BddManager(string stringConnect)
         {
             connection = new MySqlConnection(stringConnect);
@@ -56,7 +56,7 @@ namespace gestionPersonnel.bddmanager
         /// Exécution d'une requête de type LMD (insert, update, delete)
         /// </summary>
         /// <param name="stringQuery">requête</param>
-        /// <param name="parameters">dictionnire contenant les parametres</param>
+        /// <param name="parameters">dictionnaire contenant les paramètres</param>
         public void ReqUpdate(string stringQuery, Dictionary<string, object> parameters = null)
         {
             MySqlCommand command = new MySqlCommand(stringQuery, connection);

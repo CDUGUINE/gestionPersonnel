@@ -1,10 +1,4 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
-
-namespace gestionPersonnel.model
+﻿namespace gestionPersonnel.model
 {    /// <summary>
      /// Classe métier interne pour mémoriser les informations d'authentification
      /// </summary>
@@ -22,8 +16,8 @@ namespace gestionPersonnel.model
         /// <summary>
         /// Valorise les propriétés
         /// </summary>
-        /// <param name="nom"></param>
-        /// <param name="pwd"></param>
+        /// <param name="nom">nom de l'utilisateur</param>
+        /// <param name="pwd">mot de passe</param>
         public Admin(string nom, string pwd)
         {
             this.Nom = nom;

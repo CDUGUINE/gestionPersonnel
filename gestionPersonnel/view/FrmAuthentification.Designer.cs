@@ -29,6 +29,7 @@ namespace gestionPersonnel.view
         /// </summary>
         private void InitializeComponent()
         {
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(FrmAuthentification));
             this.label1 = new System.Windows.Forms.Label();
             this.label2 = new System.Windows.Forms.Label();
             this.btnValider = new System.Windows.Forms.Button();
@@ -70,15 +71,14 @@ namespace gestionPersonnel.view
             this.txtNom.Name = "txtNom";
             this.txtNom.Size = new System.Drawing.Size(165, 20);
             this.txtNom.TabIndex = 3;
-            this.txtNom.Text = "respjunior";
             // 
             // txtPwd
             // 
             this.txtPwd.Location = new System.Drawing.Point(94, 38);
             this.txtPwd.Name = "txtPwd";
+            this.txtPwd.PasswordChar = '@';
             this.txtPwd.Size = new System.Drawing.Size(165, 20);
             this.txtPwd.TabIndex = 4;
-            this.txtPwd.Text = "indiana64";
             // 
             // FrmAuthentification
             // 
@@ -90,8 +90,9 @@ namespace gestionPersonnel.view
             this.Controls.Add(this.btnValider);
             this.Controls.Add(this.label2);
             this.Controls.Add(this.label1);
+            this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.Name = "FrmAuthentification";
-            this.Text = "Authentification";
+            this.Text = "GP - Authentification";
             this.ResumeLayout(false);
             this.PerformLayout();
 

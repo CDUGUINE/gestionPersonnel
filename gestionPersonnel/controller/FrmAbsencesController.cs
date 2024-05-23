@@ -8,7 +8,7 @@ namespace gestionPersonnel.controller
     /// <summary>
     /// Contrôleur de FrmGestionPersonnel
     /// </summary>
-    class FrmAbsencesController
+    public class FrmAbsencesController
     {
         /// <summary>
         /// objet d'accès aux opérations possibles sur Developpeur
@@ -20,7 +20,7 @@ namespace gestionPersonnel.controller
         private readonly MotifAccess motifAccess;
 
         /// <summary>
-        /// Récupère les acces aux données
+        /// Récupère les accès aux données
         /// </summary>
         public FrmAbsencesController()
         {
@@ -31,7 +31,8 @@ namespace gestionPersonnel.controller
         /// <summary>
         /// Récupère et retourne les infos des absences
         /// </summary>
-        /// <returns>liste des personnels</returns>
+        /// <param name="idperso">identifiant du personnel</param>
+        /// <returns>liste des absences</returns>
         public List<Absence> GetLesAbsences(int idperso)
         {
             return absencesAccess.GetLesAbsences(idperso);
@@ -59,7 +60,7 @@ namespace gestionPersonnel.controller
         /// Demande de modification d'une absence
         /// </summary>
         /// <param name="absence">objet absence à modifier</param>
-        /// <param name="date"></param>
+        /// <param name="date">date de début</param>
         public void UpdateAbsence(Absence absence, DateTime date)
         {
             absencesAccess.UpdateAbsence(absence, date);

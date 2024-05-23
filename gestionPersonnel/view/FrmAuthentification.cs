@@ -1,13 +1,6 @@
 ﻿using gestionPersonnel.controller;
 using gestionPersonnel.model;
 using System;
-using System.Collections.Generic;
-using System.ComponentModel;
-using System.Data;
-using System.Drawing;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 using System.Windows.Forms;
 
 namespace gestionPersonnel.view
@@ -33,18 +26,19 @@ namespace gestionPersonnel.view
 
         /// <summary>
         /// Initialisations : 
-        /// Création du controleur
+        /// Création du contrôleur
         /// </summary>
         private void Init()
         {
             controller = new FrmAuthentificationController();
+            txtNom.Focus();
         }
 
         /// <summary>
-        /// Demande au controleur de controler la connexion
+        /// Demande au contrôleur de controler la connexion
         /// </summary>
-        /// <param name="sender"></param>
-        /// <param name="e"></param>
+        /// <param name="sender">objet en paramètre</param>
+        /// <param name="e">paramètre système</param>
         private void BtnValider_Click(object sender, EventArgs e)
         {
             String nom = txtNom.Text;
@@ -59,7 +53,7 @@ namespace gestionPersonnel.view
                 if (controller.ControleAuthentification(admin))
                 {
                     this.Visible = false;
-                    frmGestionPersonnel frm = new frmGestionPersonnel();
+                    FrmGestionPersonnel frm = new FrmGestionPersonnel();
                     frm.ShowDialog();
                 }
                 else

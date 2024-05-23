@@ -1,13 +1,7 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
-
-namespace gestionPersonnel.model
+﻿namespace gestionPersonnel.model
 {
     /// <summary>
-    /// motif de l'absence
+    /// classe métier liée à la table absence
     /// </summary>
     public class Motif
     {
@@ -23,8 +17,8 @@ namespace gestionPersonnel.model
         /// <summary>
         /// Valorise les propriétés
         /// </summary>
-        /// <param name="idmotif"></param>
-        /// <param name="nom"></param>
+        /// <param name="idmotif">clé de la table motif</param>
+        /// <param name="nom">libellé du motif</param>
         public Motif(int idmotif, string nom)
         {
             this.Idmotif = idmotif;

@@ -9,7 +9,7 @@ namespace gestionPersonnel.view
     /// <summary>
     /// fenêtre permettant d'afficher tous les personnels
     /// </summary>
-    public partial class frmGestionPersonnel : Form
+    public partial class FrmGestionPersonnel : Form
     {
         /// <summary>
         /// Booléen pour savoir si une modification est demandée
@@ -24,7 +24,7 @@ namespace gestionPersonnel.view
         /// </summary>
         private BindingSource bdgServices = new BindingSource();
         /// <summary>
-        /// Controleur de la fenêtre
+        /// Contrôleur de la fenêtre
         /// </summary>
         private FrmGestionPersonnelController controller;
 
@@ -32,7 +32,7 @@ namespace gestionPersonnel.view
         /// <summary>
         /// initialisation de la fenêtre
         /// </summary>
-        public frmGestionPersonnel()
+        public FrmGestionPersonnel()
         {
             InitializeComponent();
             Init();
@@ -40,7 +40,7 @@ namespace gestionPersonnel.view
 
         /// <summary>
         /// Initialisations :
-        /// Création du controleur et remplissage des listes
+        /// Création du contrôleur et remplissage des listes
         /// </summary>
         private void Init()
         {
@@ -147,6 +147,7 @@ namespace gestionPersonnel.view
                 {
                     controller.DelPersonnel(personnel);
                     RemplirListePersonnels();
+                    ViderSaisie();
                 }
             }
             else
@@ -208,9 +209,13 @@ namespace gestionPersonnel.view
             String nom = personnel.Nom;
             String prenom = personnel.Prenom;
             frm.idperso = personnel.Idpersonnel;
-            // frm.idperso à enlever après tests
-            frm.Text = "Absences de " + prenom + " " + nom;
+            frm.Text = "GestionPersonnel - Absences de " + prenom + " " + nom;
             frm.ShowDialog();
+        }
+
+        private void BtnQuitter_Click(object sender, EventArgs e)
+        {
+            Environment.Exit(0);
         }
     }
 }

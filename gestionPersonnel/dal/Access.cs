@@ -9,7 +9,7 @@ namespace gestionPersonnel.dal
     public class Access
     {
         /// <summary>
-        /// chaine de connexion à la bdd
+        /// chaîne de connexion à la bdd
         /// </summary>
         private static readonly string connectionString = "server=localhost;user id=devjunior;password=demilune64;database=atelierpro;SslMode=none";
         /// <summary>
@@ -40,7 +40,7 @@ namespace gestionPersonnel.dal
         /// <summary>
         /// Création d'une seule instance de la classe
         /// </summary>
-        /// <returns></returns>
+        /// <returns>retourne l'instance unique</returns>
         public static Access GetInstance()
         {
             if (instance == null)

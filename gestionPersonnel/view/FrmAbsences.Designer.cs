@@ -29,6 +29,7 @@ namespace gestionPersonnel.view
         /// </summary>
         private void InitializeComponent()
         {
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(FrmAbsences));
             this.dgvAbsences = new System.Windows.Forms.DataGridView();
             this.btnAjouter = new System.Windows.Forms.Button();
             this.btnSupprimer = new System.Windows.Forms.Button();
@@ -39,6 +40,7 @@ namespace gestionPersonnel.view
             this.label4 = new System.Windows.Forms.Label();
             this.cboMotif = new System.Windows.Forms.ComboBox();
             this.calAbsence = new System.Windows.Forms.MonthCalendar();
+            this.btnFermer = new System.Windows.Forms.Button();
             ((System.ComponentModel.ISupportInitialize)(this.dgvAbsences)).BeginInit();
             this.grbEdition.SuspendLayout();
             this.SuspendLayout();
@@ -53,7 +55,7 @@ namespace gestionPersonnel.view
             this.dgvAbsences.ReadOnly = true;
             this.dgvAbsences.RowHeadersVisible = false;
             this.dgvAbsences.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
-            this.dgvAbsences.Size = new System.Drawing.Size(260, 187);
+            this.dgvAbsences.Size = new System.Drawing.Size(237, 187);
             this.dgvAbsences.TabIndex = 0;
             // 
             // btnAjouter
@@ -94,7 +96,7 @@ namespace gestionPersonnel.view
             this.grbEdition.Controls.Add(this.cboMotif);
             this.grbEdition.Controls.Add(this.calAbsence);
             this.grbEdition.Enabled = false;
-            this.grbEdition.Location = new System.Drawing.Point(279, 13);
+            this.grbEdition.Location = new System.Drawing.Point(256, 12);
             this.grbEdition.Name = "grbEdition";
             this.grbEdition.Size = new System.Drawing.Size(249, 266);
             this.grbEdition.TabIndex = 6;
@@ -146,18 +148,30 @@ namespace gestionPersonnel.view
             this.calAbsence.Name = "calAbsence";
             this.calAbsence.TabIndex = 0;
             // 
+            // btnFermer
+            // 
+            this.btnFermer.Location = new System.Drawing.Point(175, 248);
+            this.btnFermer.Name = "btnFermer";
+            this.btnFermer.Size = new System.Drawing.Size(75, 23);
+            this.btnFermer.TabIndex = 7;
+            this.btnFermer.Text = "Fermer";
+            this.btnFermer.UseVisualStyleBackColor = true;
+            this.btnFermer.Click += new System.EventHandler(this.BtnFermer_Click);
+            // 
             // FrmAbsences
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(542, 284);
+            this.ClientSize = new System.Drawing.Size(514, 284);
+            this.Controls.Add(this.btnFermer);
             this.Controls.Add(this.grbEdition);
             this.Controls.Add(this.btnModifier);
             this.Controls.Add(this.btnSupprimer);
             this.Controls.Add(this.btnAjouter);
             this.Controls.Add(this.dgvAbsences);
+            this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.Name = "FrmAbsences";
-            this.Text = "Absences de ";
+            this.Text = "GestionPersonnel - Absences de ";
             this.Load += new System.EventHandler(this.FrmAbsences_Load);
             ((System.ComponentModel.ISupportInitialize)(this.dgvAbsences)).EndInit();
             this.grbEdition.ResumeLayout(false);
@@ -178,5 +192,6 @@ namespace gestionPersonnel.view
         private System.Windows.Forms.MonthCalendar calAbsence;
         private System.Windows.Forms.Button btnAnnuler;
         private System.Windows.Forms.Button btnEnregistrer;
+        private System.Windows.Forms.Button btnFermer;
     }
 }

@@ -1,16 +1,13 @@
 ﻿using gestionPersonnel.model;
 using System;
 using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 
 namespace gestionPersonnel.dal
 {
     /// <summary>
     /// Classe permettant de gérer les demandes concernant les personnels
     /// </summary>
-    class PersonnelAccess
+    public class PersonnelAccess
     {
         /// <summary>
         /// Instance unique de l'accès aux données
@@ -26,9 +23,10 @@ namespace gestionPersonnel.dal
         }
 
         /// <summary>
-        /// Controle si l'utillisateur a le droit de se connecter (nom et pwd)
+        /// Controle si l'utilisateur a le droit de se connecter (nom et pwd)
         /// </summary>
-        /// <param name="admin"></param>
+        /// <param name="admin">administrateur</param>
+        /// <returns>vrai si l'identification est correcte</returns>
         public Boolean ControleAuthentification(Admin admin)
         {
             if (access.Manager != null)

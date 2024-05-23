@@ -1,13 +1,13 @@
 ﻿using gestionPersonnel.model;
 using System;
 using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 
 namespace gestionPersonnel.dal
 {
-    class MotifAccess
+    /// <summary>
+    /// Classe permettant de gérer les demandes concernant les motifs
+    /// </summary>
+    public class MotifAccess
     {
         /// <summary>
         /// Instance unique de l'accès aux données

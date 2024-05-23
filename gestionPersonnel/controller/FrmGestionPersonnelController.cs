@@ -8,19 +8,19 @@ namespace gestionPersonnel.controller
     /// <summary>
     /// Contrôleur de FrmGestionPersonnel
     /// </summary>
-    class FrmGestionPersonnelController
+    public class FrmGestionPersonnelController
     {
         /// <summary>
-        /// objet d'accès aux opérations possibles sur Developpeur
+        /// objet d'accès aux opérations possibles sur Personnel
         /// </summary>
         private readonly PersonnelAccess personnelAccess;
         /// <summary>
-        /// objet d'accès aux opérations possible sur Service
+        /// objet d'accès aux opérations possibles sur Service
         /// </summary>
         private readonly ServiceAccess serviceAccess;
 
         /// <summary>
-        /// Récupère les acces aux données
+        /// Récupère les accès aux données
         /// </summary>
         public FrmGestionPersonnelController()
         {
